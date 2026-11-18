@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "packageManager": "pnpm@10.26.1",
+  "engines": { "node": ">=22.18.0 <25", "pnpm": ">=10 <11" },
+  "scripts": {
+    "env:sync": "node scripts/configure-env.mjs",
+    "env:check": "node scripts/check-providers.mjs",
+    "check:ai": "corepack pnpm --filter @workspace/api-server exec tsx src/check-ai.ts",
+    "preinstall": "node scripts/check-pnpm.mjs",
+    "dev": "node scripts/semesteros.mjs dev",
+    "start": "node scripts/semesteros.mjs start",
+    "build": "node scripts/semesteros.mjs build",
+    "test": "node scripts/semesteros.mjs test",
+    "smoke": "node scripts/portable-smoke.mjs",
+    "db:push": "node scripts/semesteros.mjs db:push",
+    "db:inventory": "node scripts/semesteros.mjs db:inventory",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "corepack pnpm run typecheck:libs && corepack pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+  },
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.9.10",
+    "typescript": "~5.9.3"
+  }
+}

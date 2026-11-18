@@ -1,0 +1,21 @@
+.auth-main,
+.auth-card {
+  min-width: 0;
+}
+
+.auth-card .cl-rootBox,
+.auth-card .cl-cardBox,
+.auth-card .cl-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 680px) {
+  .auth-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .auth-main {
+    padding: 24px;
+  }
+}

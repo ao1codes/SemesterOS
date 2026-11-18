@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SemesterOS"
+description = "A semester planning app that helps students track coursework, understand cross-course workload, plan study sessions, and stay ahead of deadlines."
+version = "1.0.0"
+id = "artifacts/semester-os"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22667
+
+[services.development]
+run = "pnpm --filter @workspace/semester-os run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/semester-os", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/semester-os/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22667"
+BASE_PATH = "/"

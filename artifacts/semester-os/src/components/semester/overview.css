@@ -1,0 +1,12 @@
+.ov{min-width:0}
+.ov-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ov-min{min-width:0}.ov-ellip{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ov-notices{display:grid;gap:8px;margin-top:14px}
+.ov-notice{display:flex;align-items:center;gap:8px;text-decoration:none}
+.ov-prio{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ov-prio li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 10px;border-radius:12px;background:#f4f2fb}
+.ov-rank{width:26px;height:26px;border-radius:9px;background:#fbfaf7;color:var(--violet);display:grid;place-items:center;font:800 12px Manrope,sans-serif}
+.ov-due-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--coral);margin-left:3px;vertical-align:middle}
+.ov a.heatmap-cell{text-decoration:none}
+.ov a:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+@media(max-width:680px){.ov-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.ov-prio li{grid-template-columns:26px minmax(0,1fr)}.ov-prio li .pill{grid-column:2;justify-self:start}}
